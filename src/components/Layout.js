@@ -13,7 +13,7 @@ class Layout extends React.Component {
       <h1 id='title'>Todo List</h1>
     </header>
     <TodoInput dispatch={this.props.dispatch} />
-    <TodoList todos ={this.props.todos} />
+    <TodoList todos ={this.props.todos} dispatch={this.props.dispatch} />
   </div>
     )
   }

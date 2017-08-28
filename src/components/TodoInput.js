@@ -16,22 +16,27 @@ class TodoInput extends React.Component {
   handleSubmit(e) {
     //take current this.state.inputVal delete letter update state
     e.preventDefault();
-    this.props.dispatch(actions.addTodo(this.state.inputVal))
+    this.setState({inputVal :''})
+    this
+      .props
+      .dispatch(actions.addTodo(this.state.inputVal))
   }
 
   render() {
     return (
       <div id="container">
-        <input
-          onChange={this
-          .handleChange
-          .bind(this)}
-          value={this.state.inputVal}
-          placeholder="add to list.."></input>
-
-        <button onClick={this
+        <form onSubmit={this
           .handleSubmit
-          .bind(this)}>Add</button>
+          .bind(this)}>
+          <input
+            onChange={this
+            .handleChange
+            .bind(this)}
+            value={this.state.inputVal}
+            placeholder="add to list.."></input>
+
+          <input type='submit' value='Add'/>
+        </form>
       </div>
     )
   }
