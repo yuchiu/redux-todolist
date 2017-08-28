@@ -19,7 +19,7 @@ class Layout extends React.Component {
     <header>
       <h1 id='title'>Todo List</h1>
     </header>
-    <UserInfo user = {this.props.user} createNewUserId = {this.props.actions.createNewUserId}/>
+    <UserInfo user = {this.props.user}  actions = {this.props.actions}/>
     <TodoInput addTodo={this.props.actions.addTodo} />
     <TodoList todos ={this.props.todos}  actions = {this.props.actions}/>
   </div>

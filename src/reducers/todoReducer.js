@@ -16,8 +16,7 @@ const todoReducer = function (todos = [], action) { //have to initialize with de
         ...todos //append todos
       ]
     case 'COMPLETE_TODO':
-      return
-      todos.map((todo) => {
+      return todos.map((todo) => {
         return todo.id === action.id
           ? Object.assign({}, todo, {
             completed: !todo.completed
