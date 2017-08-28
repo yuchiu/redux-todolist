@@ -1,0 +1,26 @@
+@import 'var';
+@import 'mixins';
+#container{
+    margin: 30px;
+}
+#title {
+    padding: 30px;
+    color: $orange;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+}
+
+#projects {
+    h1{
+        color: $deepblue;
+        text-align: center;
+        padding: 20px;
+
+    }
+    li {
+        @include grid(4, 2%);
+    }
+}
