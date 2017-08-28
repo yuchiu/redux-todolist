@@ -1,5 +1,5 @@
 import {applyMiddleware , compose,  createStore} from 'redux';
-import reducer from '../reducers/reducer'
+import rootReducer from '../reducers/'
 import {createLogger} from 'redux-logger'
 
 //add middleware
@@ -9,8 +9,8 @@ let finalCreateStore = compose(
 
 
 //if initial state did not passed in to configureStore, then it will assign to empty todos array
-const configureStore = function (initialState = {todos:[]}){
-    return createStore(reducer, initialState) 
+const configureStore = function (initialState = {todos:[], user :{} }){
+    return createStore(rootReducer, initialState) 
 }
 
 

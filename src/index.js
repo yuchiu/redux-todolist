@@ -13,6 +13,10 @@ let initialState ={
             text :'initial todo'
         }
     ],
+    user:{
+        username: 'steve',
+        id :13
+    }
 }
 
 let store = configureStore(initialState)

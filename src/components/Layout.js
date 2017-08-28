@@ -5,7 +5,13 @@ import TodoList from './TodoList'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import actions from '../actions/actions'
+import UserInfo from './UserInfo'
+
+
 class Layout extends React.Component {
+
+
+
 
   render() {
     return (
@@ -13,6 +19,7 @@ class Layout extends React.Component {
     <header>
       <h1 id='title'>Todo List</h1>
     </header>
+    <UserInfo user = {this.props.user} createNewUserId = {this.props.actions.createNewUserId}/>
     <TodoInput addTodo={this.props.actions.addTodo} />
     <TodoList todos ={this.props.todos}  actions = {this.props.actions}/>
   </div>
