@@ -1,5 +1,4 @@
 import React from 'react';
-import action from '../actions/actions'
 
 class TodoItem extends React.Component {
 
@@ -7,12 +6,12 @@ class TodoItem extends React.Component {
 
     this
       .props
-      .dispatch(action.completeTodo(this.props.todo.id))
+      .actions.completeTodo(this.props.todo.id)
   }
   handleDelete() {
     this
       .props
-      .dispatch(action.deleteTodo(this.props.todo.id))
+      .actions.deleteTodo(this.props.todo.id)
 
   }
 

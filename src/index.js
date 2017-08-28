@@ -12,7 +12,7 @@ let initialState ={
             completed: false,
             text :'initial todo'
         }
-    ]
+    ],
 }
 
 let store = configureStore(initialState)

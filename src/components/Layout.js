@@ -3,7 +3,8 @@ import '../../assets/scss/styles.scss';
 import TodoInput from './TodoInput'
 import TodoList from './TodoList'
 import {connect} from 'react-redux'
-
+import {bindActionCreators} from 'redux'
+import actions from '../actions/actions'
 class Layout extends React.Component {
 
   render() {
@@ -12,8 +13,8 @@ class Layout extends React.Component {
     <header>
       <h1 id='title'>Todo List</h1>
     </header>
-    <TodoInput dispatch={this.props.dispatch} />
-    <TodoList todos ={this.props.todos} dispatch={this.props.dispatch} />
+    <TodoInput addTodo={this.props.actions.addTodo} />
+    <TodoList todos ={this.props.todos}  actions = {this.props.actions}/>
   </div>
     )
   }
@@ -23,5 +24,11 @@ class Layout extends React.Component {
 function mapStateToProps(state){
   return state
 }
+function mapDispatchToProps(dispatch){
+  return {
+    actions: bindActionCreators (actions, dispatch)
+  }
+}
 
-export default connect(mapStateToProps)(Layout);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

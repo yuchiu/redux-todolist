@@ -1,5 +1,4 @@
 import React from 'react';
-import actions from '../actions/actions'
 
 class TodoInput extends React.Component {
 
@@ -16,10 +15,10 @@ class TodoInput extends React.Component {
   handleSubmit(e) {
     //take current this.state.inputVal delete letter update state
     e.preventDefault();
-    this.setState({inputVal :''})
+    this.setState({inputVal: ''})
     this
       .props
-      .dispatch(actions.addTodo(this.state.inputVal))
+      .addTodo(this.state.inputVal)
   }
 
   render() {

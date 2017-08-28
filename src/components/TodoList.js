@@ -12,7 +12,7 @@ class TodoList extends React.Component {
             .props
             .todos
             .map((todo) => {
-              return <TodoItem key={todo.id}  todo = {todo} dispatch={this.props.dispatch}/>
+              return <TodoItem key={todo.id}  todo = {todo}  actions = {this.props.actions}/>
             })
 }
 
